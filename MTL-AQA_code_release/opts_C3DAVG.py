@@ -1,5 +1,4 @@
 # Author: Paritosh Parmar (https://github.com/ParitoshParmar)
-# Fork: tanvirbinzahid/MTL_AQA_whisperX (WhisperX captions + modernized training)
 # Code used in the following, also if you find it useful, please consider citing the following:
 #
 # @inproceedings{parmar2019and,
@@ -17,31 +16,32 @@ randomseed = 0
 dataset_dir = '../MTL-AQA_dataset_release/Ready_2_Use/'
 
 # directory to store train/test split lists and annotations
-anno_n_splits_dir = dataset_dir + 'MTL-AQA_split_0_data/'
+anno_n_splits_dir = dataset_dir + 'MTL-AQA_split_0_data'
 
-# directory containing extracted frames (edit to your absolute path)
+# directory containing extracted frames
 dataset_frames_dir = '../MTL-AQA_dataset_release/frames'
 
 # sample length in terms of no of frames
 sample_length = 96
 
-# input data dims; C3D-AVG: 3,112,112; MSCADC: 3,180,180
+# input data dims; C3D-AVG:112; MSCADC: 180
 C, H, W = 3,112,112
 # image resizing dims; C3D-AVG: 171,128; MSCADC: 640,360
 input_resize = 171,128
 # temporal augmentation range
 temporal_aug_min = -3; temporal_aug_max = 3
 
-# C3D base model (full path; non-SSL variant = plain Sports-1M c3d.pickle)
-c3d_base = '../models/c3d.pickle'  # plain C3D (no self-supervision) — the released best model family
+# C3D base model (use full path)
+c3d_base = 'c3d.pickle'
+
 
 # score std
 final_score_std = 17
 
 # maximum caption length
-max_cap_len = 128
+max_cap_len = 100
 
-vocab_size = 4768
+vocab_size = 1612
 
 caption_lstm_dim_hidden = 512
 caption_lstm_dim_word = 512
@@ -60,14 +60,7 @@ max_epochs = 100
 train_batch_size = 3
 test_batch_size = 5
 
-# checkpoint information (released model lives in ../best_nonssl/checkpoints/)
-model_ckpt_interval = 100 # in epochs
-ckpt_dir = '../best_nonssl/checkpoints/'
-load_ckpt = -1
-
-# Learning rate scheduling (paper: decay at epoch 50 by 10x)
-lr_decay_epochs = [50]
-lr_decay_rate = 0.1
+model_ckpt_interval = 5 # in epochs
 
 base_learning_rate = 0.0001
 

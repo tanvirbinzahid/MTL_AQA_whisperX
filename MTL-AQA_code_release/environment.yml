@@ -1,0 +1,17 @@
+name: mtl-aqa
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - torch>=2.4
+      - torchvision>=0.19
+      - pillow
+      - numpy<2
+      - scipy
+      - nltk
+  - libgl
+  - libgcc

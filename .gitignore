@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# ML artifacts (except the released checkpoint)
+*.part
+
+# OS junk
+Thumbs.db
+.DS_Store
+
+# Server-specific config
+*.bak
+*.backup.*
+# Model weights (large) - distributed via GitHub Releases
+best_nonssl/checkpoints/*.pth
