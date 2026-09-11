@@ -51,4 +51,4 @@ Environment: Python 3.10, PyTorch >= 2.0 (see environment.yml)
 
 Sports-1M pretrained C3D (optional, for training): http://imagelab.ing.unimore.it/files/c3d_pytorch/c3d.pickle
 
-Full story, timeline, and results: see ../CONTEXT.md and ../README.md
+Full story and results: see ../README.md

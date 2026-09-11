@@ -46,7 +46,7 @@ The upstream captions were noisy broadcast subtitles. **This fork re-generates t
 | `convert_c3d.py` | Converts the official `c3d.pickle` → a PyTorch `.pth` backbone for training |
 
 ### 🔬 Self-supervised (MoCo) experiments (reference code)
-`pretrain_ssl*.py` + `ssl_dataloader.py` implement the optional MoCo self-supervised C3D pretraining on MTL videos. The released best model below does **not** use it (the *no-SSL* variant), but the code is included for reproducibility of the ablations in `CONTEXT.md`.
+`pretrain_ssl*.py` + `ssl_dataloader.py` implement the optional MoCo self-supervised C3D pretraining on MTL videos. The released best model below does **not** use it (the *no-SSL* variant), but the code is included for reproducibility.
 
 ---
 
@@ -67,7 +67,7 @@ The best surviving non-SSL MTL-AQA checkpoint (`run123`), trained 2026-04 on the
 
 > Curious about SSL? The MoCo-pretrained run reaches **ρ 0.8936** (classification 97.39%). On this
 > dataset self-supervision buys only ~0.006 ρ — the plain-C3D model below performs nearly
-> identically and needs no pretraining step. Full comparison: [`CONTEXT.md`](CONTEXT.md).
+> identically and needs no pretraining step.
 
 ### Files
 ```
@@ -140,7 +140,7 @@ python verify_captions.py                             # sanity check
 | run 3 (no-SSL) | 0.8838 | 67.95 | 6.11 | 95.81% |
 | SSL (MoCo pretrained) | 0.8936 | 69.37 | 5.97 | 97.39% |
 
-Cross-dataset transfer of the SSL variant (see `CONTEXT.md`): FineDiving ρ 0.7490 · AmateurDive ρ −0.2474 — the model trained on elite MTL-AQA dives transfers to professional FineDiving but not to amateur footage (expected domain gap).
+Cross-dataset transfer of the SSL variant: FineDiving ρ 0.7490 · AmateurDive ρ −0.2474 — the model trained on elite MTL-AQA dives transfers to professional FineDiving but not to amateur footage (expected domain gap).
 
 ---
 
@@ -148,7 +148,7 @@ Cross-dataset transfer of the SSL variant (see `CONTEXT.md`): FineDiving ρ 0.74
 
 ```
 MTL_AQA_whisperX/
-├── README.md / CONTEXT.md         ← this file / full project log with timelines
+├── README.md                     ← this readme
 ├── eval_ssl_any.py                ← non-interactive 3-dataset eval harness
 ├── best_nonssl/checkpoints/       ← ⭐ best no-SSL model (ρ 0.8871)
 ├── MTL-AQA_code_release/          ← training/eval/caption code
